@@ -5,28 +5,21 @@
   box-shadow: 0 2px 4px -1px rgba(52, 52, 52, 0.25);
 
   .header-dropdown-toggle {
-    margin-right: 30px;
     &:last-child {
       margin-right: 0;
     }
   }
-  
-  .fa {
-    color: @normal-text-color;
-  }
-  
+
   .logo-big {
-    content: url('https://discuss.circleci.com/uploads/default/original/1X/6bb0a5421f90d773f963b5fc8b18ab0459225472.png');
-    margin-top: 5px;
-    height: 30px;
+    content: url('http://assets.heystitch.io/images/logos/icon-logotype-discourse.svg');
+    height: 40px;
   }
-  
+
   .logo-small {
-    content: url('https://discuss.circleci.com/uploads/default/original/1X/f279c4e134926f50d8cccad0abc7f153bb2a1994.png');
-    margin-top: 5px;
-    height: 30px;
+    content: url('http://assets.heystitch.io/images/logos/icon-logo-discourse.svg');
+    height: 40px;
   }
-  
+
   .topic-link {
     font-size: 14px;
     font-weight: 700;
@@ -47,7 +40,7 @@
   .login-button,
   button.sign-up-button {
     padding: 10px 20px;
-    border: none;
+    border-radius: @border-radius-small;
     margin-top: 1px;
     font-size: 1.4rem;
 
@@ -61,26 +54,31 @@
   .login-button {
     background: transparent;
 
+    color: @normal-text-color;
+    &:hover {
+      background: rgba(1, 22, 39, 0.075);
+    }
+
     .fa {
       display: none;
     }
   }
 
   .sign-up-button {
-    background-color: @green;
     color: #fff;
   }
 
   .icons {
-    margin-top: -3px;
-    margin-left: 4px;
+    margin-left: 7px;
 
-    li {
-      margin-right: 20px;
+    .icon {
+      padding: 0;
+    }
 
       a.icon {
         position: relative;
         color: @normal-text-color;
+        border-radius: @border-radius;
 
         &:hover {
           background-color: #fbfbfb;
@@ -99,16 +97,11 @@
           }
         }
       }
-      
-      &:first-child {
-        margin-right: 10px;
-      }
 
       &:last-child {
         position: relative;
-        
+
         a.icon {
-          margin-left: 3px;
           padding-left: 0;
           padding-right: 0;
 
@@ -121,21 +114,20 @@
             }
           }
         }
-        
-        .unread-private-messages {
-          position: absolute;
-          left: -4px;
-          top: -9px;
-          background-color: #c13737;
-          color: #fff;
-        }
+
+      .unread-private-messages {
+        position: absolute;
+        left: -4px;
+        top: -9px;
+        background-color: #c13737;
+        color: #fff;
       }
     }
-    
+
     .fa {
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
       &.fa-bars {
         font-size: 2rem;
       }
@@ -152,11 +144,13 @@
     box-shadow: 0 2px 4px 0 rgba(52, 52, 52, 0.25);
   }
 
-  
+
   .notifications {
     li {
       position: relative;
-      
+      border-radius: @border-radius;
+      margin-bottom: 3px;
+
       &:hover {
         background-color: rgba(52, 52, 52, 0.05);
 
@@ -185,21 +179,45 @@
   }
 
   .menu-panel {
-    right: ~"calc(50vw - 555px)";
+    right: ~"calc(50vw - 580px)";
     margin-top: 12px;
     border-radius: 6px;
     padding: 12px;
     box-shadow: 0 2px 4px 0 rgba(52,52,52,0.25);
     font-size: 1.3rem;
     font-weight: bold;
+    &.slide-in {
+      .panel-body {
+        top: 12px;
+        width: calc(~"100% - 24px");
+      }
+    }
 
     @media (max-width: @wrapper-width + 16px) {
       right: 0;
       margin-right: 12px;
     }
-    
+
+    ul {
+      li.heading {
+        a {
+          display: inline-block;
+          color: @normal-text-color;
+          border-radius: @border-radius;
+        }
+      }
+    }
+
     ul.menu-links {
       li {
+        a {
+          display: inline-block;
+          color: @normal-text-color;
+          border-radius: @border-radius;
+          &.logout {
+            float: right;
+          }
+        }
         a:hover {
           position: relative;
           background-color: #fbfbfb;
@@ -219,6 +237,17 @@
         }
       }
     }
+
+    ul.category-links {
+      li.category-link {
+        .badge-notification {
+          padding: 2px 5px;
+          color: #fff;
+          background: #ccc;
+          vertical-align: super;
+        }
+      }
+    }
   }
 
   .user-menu,
@@ -233,8 +262,16 @@
   }
 
   .user-menu {
-    div.menu-links-header a:hover {
-      background-color: rgba(52, 52, 52, 0.05);
+    div.menu-links-header {
+      .fa, a {
+        color: @normal-text-color;
+      }
+      a:hover {
+        background-color: rgba(52, 52, 52, 0.05);
+      }
+    }
+    .notifications .fa {
+      color: @normal-text-color;
     }
   }
 
@@ -242,7 +279,7 @@
     .topic-statuses .fa {
       color: #ddd;
     }
-    
+
     li:not(.category):not(.heading):hover a:not(.badge-notification) {
       position: relative;
       background-color: transparent;
@@ -263,7 +300,6 @@
     input[type='text'] {
       height: 36px;
       padding: 12px;
-      border-radius: 18px;
     }
   }
 }

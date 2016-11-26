@@ -3,14 +3,19 @@ html {
 }
 
 body {
-  font-family: ProximaNova;
+  font-family: @main-font;
   font-weight: 300;
   font-size: 1.5rem;
   line-height: 1.5;
   color: #333;
 
   button {
-    font-family: @font-family;
+    font-family: @ui-font;
+    font-weight: 700;
+  }
+
+  hr {
+    border-color: #ddd;
   }
 
   input[type="text"],
@@ -34,9 +39,9 @@ body {
     font-size: 1em;
 
     &:focus {
-      border-color: #337ab7;
+      border-color: @active-text-color;
       outline: 0;
-      box-shadow: inset 0 1px 1px rgba(51,121,182,0.1),0 0 8px #337ab7;
+      box-shadow: inset 0 1px 1px rgba(51,121,182,0.1),0 0 8px @active-text-color;
     }
   }
 }
@@ -48,10 +53,15 @@ body {
   padding: 82px 0 0 0;
 }
 
+.spinner {
+  border-color: @link-text-color;
+  border-right-color: #fff;
+}
+
 .badge-category-bg {
   position: relative;
   top: 1px;
-  border-radius: 50%;
+  border-radius: @border-radius;
 }
 
 .badge-wrapper.bullet {
@@ -71,9 +81,9 @@ body {
 
 .btn {
   position: relative;
-  padding: 10px 15px;
+  padding: 8px 15px;
   border: 1px solid #ddd;
-  border-radius: 20px;
+  border-radius: @border-radius;
   background-color: #fbfbfb;
   line-height: 20px;
   font-weight: 700;
@@ -83,7 +93,7 @@ body {
   &:hover {
     background-color: #fbfbfb;
     color: @normal-text-color;
-    
+
     &::before {
       content: "";
       position: absolute;
@@ -91,11 +101,11 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 20px;
+      border-radius: @border-radius;
       background-color: @normal-text-color;
       opacity: 0.05;
       pointer-events: none;
-    }    
+    }
   }
 }
 
@@ -112,35 +122,41 @@ body {
 }
 
 a {
-  color: @active-text-color;
+  color: @link-text-color;
 
   &:visited {
-    color: @active-text-color;
+    color: @link-text-color;
   }
 }
 
 .alert.alert-info {
   background-color: rgb(235, 242, 248);
   border-radius: 6px;
-  border: 1px solid #337ab7;
+  border: 1px solid @active-text-color;
   padding: 20px;
   color: @normal-text-color;
 }
 
 button[title="topic admin actions"] {
   box-sizing: border-box;
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   padding: 0;
 }
 
 img.avatar {
   border-radius: 50%;
   box-shadow: 0 2px 4px 0 rgba(52, 52, 52, 0.25);
+  background-color: #fff;
 }
 
 .accepted-text {
   color: @green;
+}
+
+.popup-menu {
+  border-radius: @border-radius;
+  border-color: #ddd;
 }
 
 .composer-popup {
@@ -209,8 +225,8 @@ a.mention {
     text-align: center;
 }
 
-.education {
-  color: #555;
+div.education {
+  color: @normal-text-color;
   line-height: 1.5;
 }
 
@@ -237,7 +253,7 @@ a.mention {
 
       &.active {
         background-color: transparent;
-        color: @active-text-color;
+        color: @link-text-color;
       }
     }
   }
