@@ -1,6 +1,7 @@
-## Discourse Styles
+## Stitch Discourse Styles
 
-Styles for Discourse are written with the LESS preprocessor.
+Custom stylesheet generator for [https://community.heystitch.io](https://community.heystitch.io).
+This project is written with the LESS preprocessor.
 
 ### Structure
 
