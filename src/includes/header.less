@@ -13,6 +13,12 @@
   .logo-big {
     content: url('http://assets.heystitch.io/images/logos/icon-logotype-discourse.svg');
     height: 40px;
+    .responsive('small-mobile', {
+      content: url('http://assets.heystitch.io/images/logos/icon-logo-discourse.svg')
+    });
+    .responsive('mobile', {
+      content: url('http://assets.heystitch.io/images/logos/icon-logotype-discourse-small.svg')
+    });
   }
 
   .logo-small {
@@ -52,6 +58,7 @@
   }
 
   .login-button {
+    padding: 10px;
     background: transparent;
 
     color: @normal-text-color;

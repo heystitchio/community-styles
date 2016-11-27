@@ -66,6 +66,14 @@
       border-radius: 6px;
       border: 1px solid #ddd;
 
+      section {
+        border-top: 1px solid #ddd;
+      }
+
+      .topic-map-expanded {
+        border: none;
+      }
+
       .btn {
         border: none;
         background-color: transparent;
@@ -267,7 +275,6 @@
       border-radius: 6px;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
-      background-color: rgba(51, 121, 182, 0.10);
       color: @active-text-color;
       overflow: hidden;
     }
@@ -332,5 +339,7 @@
 
   .show-topic-admin {
     position: fixed;
+    top: 90px;
+    right: 20px;
   }
 }

@@ -17,3 +17,21 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.responsive(@type; @rules) {
+  & when (@type = 'small-mobile') {
+    @media only screen and (max-width: 379px) {
+      @rules();
+    }
+  }
+  & when (@type = 'mobile') {
+    @media only screen and (min-width: 380px) and (max-width: 571px) {
+      @rules();
+    }
+  }
+  & when (@type = 'tablet') {
+    @media only screen and (min-width: 572px) and (max-width: 1023px) {
+      @rules();
+    }
+  }
+}
