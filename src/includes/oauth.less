@@ -1,0 +1,180 @@
+#a0-lock {
+  .a0-overlay.a0-active {
+    background: rgba(0, 0, 0, 0.5) !important;
+    overflow: hidden !important;
+    .a0-panel {
+      box-shadow: none !important;
+      width: 400px !important;
+      color: inherit !important;
+      @media(max-width: 450px) {
+        width: 100% !important;
+        border-radius: 0 !important;
+      }
+      * {
+        font-family: inherit !important;
+      }
+      .a0-close {
+        background: transparent !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        opacity: 0.2 !important;
+        &:hover {
+          opacity: 5 !important;
+        }
+      }
+      .a0-error,
+      .a0-success {
+        border-radius: 3px !important;
+      }
+      .a0-error {
+        background: rgb(238, 63, 74) !important;
+      }
+      .a0-success {
+        background: rgb(119, 193, 75) !important;
+      }
+      .a0-top-header {
+        border-radius: 6px 6px 0 0 !important;
+        overflow: hidden !important;
+        border-bottom: 1px solid #eee !important;
+        @media(max-width: 450px) {
+          border-radius: 0 !important;
+        }
+        h1 {
+          font-size: 20px !important;
+          margin-top: 10px !important;
+        }
+        .a0-bg-solid-color {
+          background: #fff !important;
+        }
+        .a0-bg-gradient {
+          .a0-image {
+            display: none !important;
+          }
+        }
+        .a0-icon-container {
+          .a0-image {
+            img {
+              content: url(http://assets.heystitch.io/images/logos/logo-nav.png) !important;
+            }
+          }
+        }
+      }
+      .a0-mode-container {
+        border-radius: 0 0 6px 6px !important;
+        overflow: hidden !important;
+        @media(max-width: 450px) {
+          border-radius: 0 !important;
+        }
+        .a0-body-content {
+          padding-bottom: 10px !important;
+          .a0-forgot-pass {
+            margin: 10px !important;
+            color: #3399ff !important;
+            &:hover {
+              text-decoration: underline !important;
+            }
+          }
+          .a0-create-account,
+          .a0-buttons-actions,
+          .a0-options {
+            .a0-switch {
+              border-color: #3399ff !important;
+              border-radius: 4px !important;
+              &:hover {
+                border-color: #3399ff !important;
+              }
+              span {
+                font-size: 14px !important;
+                letter-spacing: 0 !important;
+                text-transform: none !important;
+                color: inherit !important;
+                &:hover {
+                  color: #3399ff !important;
+                }
+                &.a0-active {
+                  background: #3399ff !important;
+                  color: #fff !important;
+                  &:hover {
+                    color: #fff !important;
+                  }
+                }
+              }
+            }
+          }
+          .a0-emailPassword {
+            .a0-input-box {
+              background: #eee !important;
+              border-color: #ddd !important;
+              border-radius: 4px !important;
+              input {
+                border-left: 1px solid #ddd !important;
+                font-size: 14px !important;
+                border-radius: 0 3px 3px 0 !important;
+                color: inherit !important;
+                height: 36px !important;
+              }
+              i {
+                top: 11px !important;
+                color: inherit !important;
+                &[class*=" a0-icon-budicon"],
+                &[class^=a0-icon-budicon] {
+                  &:before {
+                    display: inline-block !important;
+                    font-family: "stitch" !important;
+                    font-style: normal !important;
+                    font-weight: normal !important;
+                    font-variant: normal !important;
+                    text-transform: none !important;
+                    speak: none !important;
+                    line-height: 1 !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    -moz-osx-font-smoothing: grayscale !important;
+                  }
+                  &.a0-icon-budicon-5 {
+                    &:before {
+                      content: '\63' !important;
+                    }
+                  }
+                  &.a0-icon-budicon {
+                    &:before {
+                      content: '\6a' !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .bottom-content {
+          .a0-action {
+            button.a0-primary {
+              margin-left: 30px !important;
+              width: ~'calc(100% - 60px)' !important;
+              height: 36px !important;
+              padding: 6px 15px !important;
+              background: #3399ff !important;
+              border: 1px solid #1a8cff !important;
+              border-radius: 4px !important;
+              font-size: 14px !important;
+              font-weight: 400 !important;
+              text-indent: 0 !important;
+              text-transform: none;
+              letter-spacing: 0;
+              &:hover {
+                background: #007af5 !important;
+                border-color: #006ddc !important;
+                box-shadow: none !important;
+              }
+              &:after {
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+      .a0-footer {
+        display: none !important;
+      }
+    }
+  }
+}

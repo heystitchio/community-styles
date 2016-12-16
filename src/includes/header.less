@@ -1,8 +1,13 @@
 .d-header {
-  height: 64px;
-  padding-top: 6px;
+  height: 60px;
+  padding-top: 0;
   background-color: #fff;
-  box-shadow: 0 2px 4px -1px rgba(52, 52, 52, 0.25);
+  border-bottom: 1px solid #ddd;
+  box-shadow: none;
+
+  .contents {
+    margin: 9px 0;
+  }
 
   .header-dropdown-toggle {
     &:last-child {
@@ -11,18 +16,18 @@
   }
 
   .logo-big {
-    content: url('http://assets.heystitch.io/images/logos/icon-logotype-discourse.svg');
+    content: url('http://assets.heystitch.io/images/logos/community/logotype-community.svg');
     height: 40px;
     .responsive('small-mobile', {
-      content: url('http://assets.heystitch.io/images/logos/icon-logo-discourse.svg')
+      content: url('http://assets.heystitch.io/images/logos/community/logo-community.svg')
     });
     .responsive('mobile', {
-      content: url('http://assets.heystitch.io/images/logos/icon-logotype-discourse-small.svg')
+      content: url('http://assets.heystitch.io/images/logos/community/logotype-community-small.svg')
     });
   }
 
   .logo-small {
-    content: url('http://assets.heystitch.io/images/logos/icon-logo-discourse.svg');
+    content: url('http://assets.heystitch.io/images/logos/community/logo-community.svg');
     height: 40px;
   }
 
@@ -46,9 +51,8 @@
   .login-button,
   button.sign-up-button {
     padding: 10px 20px;
-    border-radius: @border-radius-small;
+    border-radius: @border-radius;
     margin-top: 1px;
-    font-size: 1.4rem;
 
     &:hover {
       &::before {

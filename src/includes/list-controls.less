@@ -7,35 +7,26 @@
     font-size: 1em;
   }
 
-  .category-breadcrumb { // to win the specificity battle
+  .category-breadcrumb {
+    margin: 0;
     .has-drop.box {
       position: relative;
       margin-right: 20px;
       border: 1px solid #ddd;
       border-radius: @border-radius;
-      background-color: #fbfbfb;
-      font-weight: 700;
+      background-color: @btn-default-bg;
 
       &:hover {
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          border-radius: @border-radius;
-          width: 100%;
-          height: 100%;
-          background-color: #343434;
-          opacity: 0.05;
-          pointer-events: none;
-        }
+        color: @brand-primary;
+        background-color: @btn-default-bg;
+        border-color: @brand-primary;
       }
 
       .badge-category {
-        padding: 10px 0 10px 15px !important;
+        padding: 6px 0 6px 15px !important;
         text-transform: capitalize;
-        font-size: 1.4rem;
         border-radius: @border-radius 0 0 @border-radius;
+        font-size: 1em;
         &.home {
           background: #fff !important;
           + .category-dropdown-button {
@@ -49,7 +40,7 @@
       }
 
       .category-dropdown-button {
-        padding: 10px 12px 10px 10px !important;
+        padding: 6px 12px 6px 4px !important;
         border-radius: 0 @border-radius @border-radius 0;
       }
     }
@@ -70,14 +61,13 @@
 
   .nav-pills {
     margin-bottom: 0;
-    font-weight: 700;
 
     a {
-      padding: 10px 12px;
-      font-size: 1.4rem;
+      padding: 6px 15px;
       color: @normal-text-color;
       border-radius: @border-radius;
-      &:hover {
+      font-size: 1em;
+      &:not(.active):hover {
         background-color: @hover-blue-background !important;
         color: @active-text-color;
       }
@@ -85,16 +75,13 @@
 
     .active {
       a {
-        background-color: transparent;
-        color: @link-text-color;
+        background-color: @btn-primary-bg;
+        color: @btn-primary-color;
       }
     }
   }
 
   #create-topic {
-    font-size: 1.4rem;
-    font-weight: 700;
-
     .fa {
       display: none;
     }
@@ -105,8 +92,6 @@
     border-radius: 6px;
     padding-left: 6px;
     box-shadow: 0 2px 4px 0 rgba(52, 52, 52, 0.25);
-    font-size: 1.4rem;
-    font-weight: 700;
 
     li > a:hover {
       color: @active-text-color;

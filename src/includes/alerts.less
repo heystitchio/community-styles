@@ -1,4 +1,12 @@
 .alert {
   box-sizing: border-box;
   .wrapper();
+  padding: 20px;
+  border-radius: 6px;
+  color: @normal-text-color;
+  border: 1px solid;
+  &.alert-info {
+    background-color: lighten(saturate(spin(@info-text-color, -0.3928), 27.8018), 40.0000);
+    border-color: @info-text-color;
+  }
 }
