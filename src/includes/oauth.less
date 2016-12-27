@@ -12,8 +12,10 @@
       }
       * {
         font-family: inherit !important;
+        font-size: 14px !important;
       }
-      .a0-close {
+      .a0-close,
+      .a0-back {
         background: transparent !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
@@ -27,6 +29,20 @@
       }
       .a0-success {
         background: rgb(119, 193, 75) !important;
+      }
+      .a0-bg-gradient {
+        background: #fff;
+      }
+      .a0-all,
+      .a0-forgot-pass {
+        margin: 10px !important;
+        color: #3399ff !important;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+      .a0-all {
+        margin-bottom: 20px !important;
       }
       .a0-top-header {
         border-radius: 6px 6px 0 0 !important;
@@ -61,13 +77,42 @@
         @media(max-width: 450px) {
           border-radius: 0 !important;
         }
+        .a0-loading {
+          .a0-spinner-css {
+            border-width: 4px;
+            border-top-color: transparent;
+            border-right-color: @brand-primary;
+            border-bottom-color: @brand-primary;
+            border-left-color: @brand-primary;
+          }
+          .a0-spinner-bg {
+            display: none;
+          }
+        }
         .a0-body-content {
           padding-bottom: 10px !important;
-          .a0-forgot-pass {
-            margin: 10px !important;
-            color: #3399ff !important;
-            &:hover {
-              text-decoration: underline !important;
+          .a0-zocial {
+            border-radius: @border-radius;
+            span {
+              font-size: 14px;
+            }
+            &.a0-guest {
+              background-color: @brand-primary;
+              &:hover span {
+                background-color: darken(@brand-primary, 10%);
+              }
+              &:before {
+                content: '\7d';
+                font-family: "stitch" !important;
+                font-style: normal !important;
+                font-weight: normal !important;
+                font-variant: normal !important;
+                text-transform: none !important;
+                speak: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: darken(@brand-primary, 10%);
+              }
             }
           }
           .a0-create-account,

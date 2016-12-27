@@ -25,7 +25,7 @@
       .badge-category {
         padding: 6px 0 6px 15px !important;
         text-transform: capitalize;
-        border-radius: @border-radius 0 0 @border-radius;
+        border-radius: @border-radius;
         font-size: 1em;
         &.home {
           background: #fff !important;
@@ -45,16 +45,17 @@
       }
     }
 
-    // hack to use different font-awesome arrow
     .fa-caret-right {
+      margin-left: 0 !important;
       &::before {
-        content: "\f106";
+        content: "\e03f";
       }
     }
 
     .fa-caret-down {
+      margin-left: 0 !important;
       &::before {
-        content: "\f107";
+        content: "\e03f";
       }
     }
   }
@@ -67,9 +68,9 @@
       color: @normal-text-color;
       border-radius: @border-radius;
       font-size: 1em;
-      &:not(.active):hover {
-        background-color: @hover-blue-background !important;
-        color: @active-text-color;
+      &:hover {
+        background-color: #eee;
+        color: @normal-text-color;
       }
     }
 
@@ -77,6 +78,10 @@
       a {
         background-color: @btn-primary-bg;
         color: @btn-primary-color;
+        &:hover {
+          background-color: @btn-primary-bg !important;
+          color: @btn-primary-color !important;
+        }
       }
     }
   }
@@ -88,28 +93,134 @@
   }
 
   .open > .dropdown-menu {
-    margin-top: 18px;
+    margin-top: 8px;
     border-radius: 6px;
-    padding-left: 6px;
-    box-shadow: 0 2px 4px 0 rgba(52, 52, 52, 0.25);
+    padding: 12px 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    border-color: #eee;
+    border-color: rgba(0, 0, 0, .08);
+    overflow: visible;
+    -webkit-animation: fade-drop-down 0.3s ease-out;
+    animation: fade-drop-down 0.3s ease-out;
 
-    li > a:hover {
-      color: @active-text-color;
-      background-color: rgba(52, 52, 52, 0.05);
+    &:before,
+    &:after {
+      position: absolute;
+      bottom: 100%;
+      right: 13px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      content: " ";
+      border: solid transparent;
+    }
+
+    &:before {
+      margin-left: -8px;
+      border-color: rgba(221, 221, 221, 0);
+      border-width: 8px;
+      border-bottom-color: #aaa;
+      border-bottom-color: rgba(0, 0, 0, .15);
+    }
+
+    &:after {
+      margin-left: -7px;
+      border-color: rgba(255, 255, 255, 0);
+      border-width: 7px;
+      border-bottom-color: #fff;
+    }
+
+    span {
+      color: @text-color;
+    }
+
+    li {
+      > a {
+        border-radius: @border-radius;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+      &.disabled > a {
+        color: rgba(0,0,0,0.5);
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
     }
   }
 
   .category-dropdown-menu {
     left: 0;
-    margin-top: 6px;
+    margin-top: 4px;
     border-radius: 6px;
-    padding: 6px;
-    box-shadow: 0 2px 4px 0 rgba(52, 52, 52, 0.25);
+    padding: 12px 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    border-color: #eee;
+    border-color: rgba(0, 0, 0, .08);
+    overflow: visible;
+    -webkit-animation: fade-drop-down 0.3s ease-out;
+    animation: fade-drop-down 0.3s ease-out;
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 18px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      border: solid transparent;
+      z-index: 105;
+    }
+    &:before {
+      margin-left: -8px;
+      border-color: rgba(221, 221, 221, 0);
+      border-width: 8px;
+      border-bottom-color: #aaa;
+      border-bottom-color: rgba(0, 0, 0, .15);
+    }
+    &:after {
+      margin-left: -7px;
+      border-color: rgba(255, 255, 255, 0);
+      border-width: 7px;
+      border-bottom-color: #fff;
+    }
     .cat {
       line-height: 0;
       border-radius: @border-radius;
-      a.badge-category.home {
-        padding-left: 10px!important;
+      font-size: 1em;
+      a {
+        &.badge-wrapper {
+          font-size: 1em;
+        }
+        &.badge-category.home {
+          margin-left: 0;
+          padding-left: 14px!important;
+          width: ~'calc(100% - 14px)';
+          font-weight: 400;
+          &:hover {
+            background-color: #f0f0f0!important;
+          }
+        }
+      }
+    }
+  }
+
+  .tag-drop {
+    .category-dropdown-menu {
+      a {
+        &.badge-category.home {
+          padding-left: 10px!important;
+        }
+        &.tag-badge-wrapper {
+          padding: 6px 0 6px 10px !important;
+          color: @text-color;
+          font-weight: 400;
+          text-transform: capitalize;
+          &:hover {
+            background-color: #f0f0f0!important;
+          }
+        }
       }
     }
   }

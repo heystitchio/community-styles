@@ -11,6 +11,10 @@ body {
 
   button {
     font-family: @ui-font;
+    &[title="topic admin actions"] {
+      height: 34px;
+      width: 34px;
+    }
   }
 
   hr {
@@ -76,6 +80,13 @@ body {
   }
 }
 
+.btn,
+.btn-primary,
+.btn-danger {
+  line-height: 1.42857143;
+  transition: all 0.3s ease-out;
+}
+
 .btn {
   position: relative;
   padding: 6px 15px;
@@ -103,12 +114,17 @@ body {
       background: @btn-default-bg;
     }
   }
+
+  .fa {
+    margin-right: 4px;
+  }
 }
 
 .btn-primary {
   color: @btn-primary-color;
   background-color: @btn-primary-bg;
   border-color: @btn-primary-border;
+  line-height: 1.42857143;
   &:hover {
     background-color: darken(@btn-primary-bg, 10%);
     border-color: darken(@btn-primary-border, 12%);
@@ -120,6 +136,7 @@ body {
   color: @btn-danger-color;
   background-color: @btn-danger-bg;
   border-color: @btn-danger-border;
+  line-height: 1.42857143;
   &:hover {
     background-color: darken(@btn-danger-bg, 10%);
     border-color: darken(@btn-danger-border, 12%);

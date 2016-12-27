@@ -50,9 +50,8 @@
 
   .login-button,
   button.sign-up-button {
-    padding: 10px 20px;
+    margin: 4px 16px 0 0 !important;
     border-radius: @border-radius;
-    margin-top: 1px;
 
     &:hover {
       &::before {
@@ -61,13 +60,16 @@
     }
   }
 
-  .login-button {
-    padding: 10px;
-    background: transparent;
+  .sign-up-button {
+    padding: 7px 16px !important;
+  }
 
+  .login-button {
+    padding: 7px 0;
+    background: transparent;
     color: @normal-text-color;
     &:hover {
-      background: rgba(1, 22, 39, 0.075);
+      color: @link-text-color;
     }
 
     .fa {
@@ -80,7 +82,7 @@
   }
 
   .icons {
-    margin-left: 7px;
+    margin-left: 0;
 
     .icon {
       padding: 0;
@@ -185,6 +187,10 @@
             background: transparent;
           }
         }
+      }
+
+      i {
+        padding: 0;
       }
     }
   }

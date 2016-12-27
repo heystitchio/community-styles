@@ -8,6 +8,11 @@
   .topic-statuses {
     .topic-status {
       margin-right: 7px;
+
+      .fa-thumb-tack.unpinned:before {
+        -webkit-transform: translate(0, -28%);
+        transform: translate(0, -28%);
+      }
     }
 
     .fa {
@@ -152,7 +157,7 @@
   }
 
   .jagged-border {
-    width: 100%;
+    display: none;
   }
 
   .names {
@@ -167,10 +172,29 @@
       color: @green;
     }
 
-    button.create {
-      font-family: inherit;
-      font-weight: 700;
-      color: @normal-text-color;
+    button {
+      color: @text-color;
+      &:hover {
+        background: #eee;
+      }
+      &.create {
+        font-family: inherit;
+        font-weight: 700;
+        color: @normal-text-color;
+        border-radius: @border-radius;
+      }
+      &.widget-button:not(.create) {
+        border-radius: 50px;
+      }
+      .read-icon:before {
+        content: '\6e';
+        display: inline-block;
+        font-family: "stitch" !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+      }
     }
   }
 
@@ -178,8 +202,15 @@
     display: flex;
     align-items: center;
     height: 64px;
-    border-top: 2px solid #ddd;
-    border-bottom: 2px solid #ddd;
+    border-top: none;
+    border-bottom: 1px solid #ddd;
+    &:first-of-type {
+      border-top: 1px solid #ddd;
+    }
+
+    button {
+      color: @text-color;
+    }
 
     .topic-avatar {
       width: auto;
@@ -279,6 +310,9 @@
   }
 
   #topic-footer-buttons {
+    button.btn {
+      margin-bottom: 10px;
+    }
     .pinned-options.btn-group,
     .notification-options.btn-group {
       display: flex;
@@ -300,7 +334,7 @@
   }
 
   #topic-closing-info {
-    border-color: #ddd;
+    border: none;
   }
 
   #suggested-topics {
@@ -330,5 +364,62 @@
     position: fixed;
     top: 90px;
     right: 20px;
+  }
+
+  .open > .dropdown-menu {
+    bottom: 105%;
+    border-radius: 6px;
+    padding: 12px 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    border-color: #eee;
+    border-color: rgba(0, 0, 0, .08);
+    overflow: visible;
+    -webkit-animation: fade-drop-up 0.3s ease-out;
+    animation: fade-drop-up 0.3s ease-out;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 100%;
+      left: 18px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      content: " ";
+      border: solid transparent;
+    }
+
+    &:before {
+      margin-left: -8px;
+      border-color: rgba(221, 221, 221, 0);
+      border-width: 8px;
+      border-top-color: #aaa;
+      border-top-color: rgba(0, 0, 0, .15);
+    }
+
+    &:after {
+      margin-left: -7px;
+      border-color: rgba(255, 255, 255, 0);
+      border-width: 7px;
+      border-top-color: #fff;
+    }
+
+    span {
+      color: @text-color;
+    }
+
+    li {
+      > a {
+        border-radius: @border-radius;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+      &.disabled > a {
+        color: rgba(0,0,0,0.5);
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
   }
 }

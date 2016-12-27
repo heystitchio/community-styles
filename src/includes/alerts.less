@@ -8,5 +8,12 @@
   &.alert-info {
     background-color: lighten(saturate(spin(@info-text-color, -0.3928), 27.8018), 40.0000);
     border-color: @info-text-color;
+    a {
+      color: inherit;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
