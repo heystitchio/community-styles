@@ -184,26 +184,165 @@ img.avatar {
 }
 
 #reply-control {
-  background-color: #ddd;
-  opacity: 0.95;
+  background-color: #fff;
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.12), 0 -1px 2px rgba(0,0,0,0.24);
 
   .grippie {
-    border-top: 1px solid #ccc;
-    background: url(/assets/grippie-d28a6f65e22c0033dcf0d63883bcc590.png) #ddd no-repeat center 3px;
+    border-top: 1px solid #eee;
+    &:before {
+      border-color: @text-color;
+    }
   }
 
   .toggler {
-    font-size: .75em;
-    color: #343434;
+    font-size: 1.2em;
+    color: @text-color;
+    &:before {
+      content: '\e03f';
+      display: inline-block;
+      font-family: "stitch" !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+      font-variant: normal !important;
+      text-transform: none !important;
+      speak: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-transform: translate(0, 0.167em);
+      transform: translate(0, 0.167em);
+    }
   }
 
   .contents .submit-panel {
     bottom: 12px;
   }
+
+  .d-editor {
+    border: none;
+  }
+
+  .d-editor-textarea-wrapper {
+    border: 1px solid #ddd;
+    border-radius: @border-radius;
+    overflow: hidden;
+  }
+
+  .d-editor-preview {
+    border-color: #ddd !important;
+    border-radius: @border-radius;
+  }
+
+  .d-editor-button-bar {
+    height: 36px;
+    background-color: transparent;
+    border-bottom: 1px solid #ddd;
+    button {
+      border: none;
+      color: @text-color;
+      border-radius: @border-radius-small;
+      &:hover {
+        border: none;
+        background-color: #eee;
+      }
+    }
+    .d-editor-spacer {
+      margin-right: 10px;
+      height: 26px;
+      background-color: #ddd;
+    }
+  }
+
+  .select2-container {
+    border: none;
+    .select2-choices {
+      border-color: #ddd;
+      border-radius: @border-radius;
+    }
+    &.select2-container-active {
+      .select2-choices {
+        border-color: @brand-primary;
+      }
+    }
+    &.select2-drop-above {
+      border: none;
+      .select2-choices {
+        border-radius: 0 0 @border-radius @border-radius;
+        border: none;
+      }
+    }
+    &.category-combobox {
+      border: 1px solid #ddd;
+    }
+    &.select2-dropdown-open {
+      border: 1px solid @brand-primary;
+      a.select2-choice {
+        border: none;
+      }
+    }
+  }
+
+  #s2id_ember1264 {
+    .select2-choices {
+      min-height: 32px;
+    }
+  }
+}
+
+.select2-drop-active {
+  .select2-result {
+    border-radius: @border-radius-small;
+    &.select2-highlighted {
+      background-color: #eee !important;
+    }
+  }
 }
 
 .select2-results .select2-highlighted {
   background: rgba(51,121,182,0.1) !important;
+}
+
+#user-card {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  .card-content {
+    border-radius: 5px;
+    img.avatar {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+  }
+  &.show-badges {
+    .user-badge {
+      padding: 3px 10px;
+      border-radius: @border-radius;
+      background: #fff !important;
+      .fa {
+        padding-right: 1px;
+        font-size: 1.2em;
+      }
+    }
+    .more-user-badges {
+      padding: 3px 10px;
+      border-color: #ddd !important;
+      background: #fff !important;
+      color: @text-color !important;
+      &:hover {
+        border-color: @brand-primary !important;
+        color: @brand-primary !important;
+      }
+    }
+  }
+}
+
+.badge-type-bronze {
+  border-color: #cd7f32 !important;
+  color: #cd7f32 !important;
+}
+
+.badge-type-gold {
+  border-color: #e7c300 !important;
+  color: #e7c300 !important;
 }
 
 button:focus {
